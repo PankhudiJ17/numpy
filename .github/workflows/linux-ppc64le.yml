@@ -83,12 +83,15 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - name: "s390x/clang - baseline(default)"
+          - name: "ppc64le/clang"
             args: "-Dallow-noblas=false"
-            runner: ubuntu-24.04-s390x
-          - name: "s390x/clang - baseline(Z15/VXE2)"
-            args: "-Dallow-noblas=false -Dcpu-baseline=vxe2"
-            runner: ubuntu-24.04-s390x
+            runner: self-hosted
+          # - name: "s390x/clang - baseline(default)"
+          #   args: "-Dallow-noblas=false"
+          #   runner: ubuntu-24.04-s390x
+          # - name: "s390x/clang - baseline(Z15/VXE2)"
+          #   args: "-Dallow-noblas=false -Dcpu-baseline=vxe2"
+          #   runner: ubuntu-24.04-s390x
 
     name: "${{ matrix.config.name }}"
     steps:
