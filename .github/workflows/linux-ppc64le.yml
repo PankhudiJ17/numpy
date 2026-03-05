@@ -3,8 +3,9 @@ name: Native ppc64le Linux Test
 on:
   pull_request:
     branches:
-      - main
-      - maintenance/**
+      #- main
+      #- maintenance/**
+      - branch1
     paths-ignore:
       - '**.pyi'
       - '**.md'
@@ -25,7 +26,7 @@ jobs:
     # It requires a native ppc64le GHA runner, which is not available on forks.
     # For more details, see: https://github.com/numpy/numpy/issues/29125
     if: github.repository == 'numpy/numpy'
-    runs-on: ubuntu-24.04-ppc64le-p10
+    runs-on: self-hosted
 
     strategy:
       fail-fast: false
