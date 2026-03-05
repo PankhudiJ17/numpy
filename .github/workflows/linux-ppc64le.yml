@@ -59,8 +59,10 @@ jobs:
       if: matrix.config.name == 'clang'
       run: |
         sudo apt install -y clang
-        export CC=clang
-        export CXX=clang++
+        echo CC=clang >> $GITHUB_ENV
+        echo CXX=clang++ >> $GITHUB_ENV
+       # export CC=clang
+       # export CXX=clang++
 
     - name: Meson Build
       run: |
