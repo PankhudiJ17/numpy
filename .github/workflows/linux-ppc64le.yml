@@ -2,6 +2,7 @@ name: Native ppc64le Linux Test
 
 on:
   push: 
+    branches:
       - branch1
   pull_request:
     branches:
