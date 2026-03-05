@@ -1,11 +1,12 @@
 name: Native ppc64le Linux Test
 
 on:
+  push: 
+      - branch1
   pull_request:
     branches:
-      #- main
-      #- maintenance/**
-      - branch1
+      - main
+      - maintenance/**
     paths-ignore:
       - '**.pyi'
       - '**.md'
