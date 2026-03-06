@@ -60,9 +60,9 @@ jobs:
       if: matrix.config.name == 'clang'
       run: |
         sudo apt install -y clang
-        echo FC=clang >> $GITHUB_ENV
-        echo FFLAGS="-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
-        echo FCFLAGS="$FFLAGS" >> $GITHUB_ENV
+        echo "FC=clang" >> $GITHUB_ENV
+        echo "FFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
+        echo "FCFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
        
        # export CC=clang
        # export CXX=clang++
