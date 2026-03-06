@@ -61,7 +61,7 @@ jobs:
       if: matrix.config.name == 'clang'
       run: |
         sudo apt install -y clang-20
-        echo CC=clang-20 >>> $GITHUB_ENV
+        echo CC=clang-20 >> $GITHUB_ENV
         echo "FCFLAGS=-fallow-argument-mismatch" >> $GITHUB_ENV
        # echo CXX=clang++-20 >> $GITHUB_ENV
        # export CC=clang 
