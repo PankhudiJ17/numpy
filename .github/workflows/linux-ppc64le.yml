@@ -59,13 +59,18 @@ jobs:
     - name: Install clang
       if: matrix.config.name == 'clang'
       run: |
-        sudo apt install -y clang
-        echo "FC=clang" >> $GITHUB_ENV
-        echo "FFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
-        echo "FCFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
+        sudo apt install -y clang-20
+        echo CC=clang-20 >> $GITHUB_ENV
+        echo CXX=clang++-20 >> $GITHUB_ENV
+       # export CC=clang 
+        # export CXX=clang++
+
+        
+       # echo "FC=clang" >> $GITHUB_ENV
+        # echo "FFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
+        # echo "FCFLAGS=-ffree-line-length-none -fno-backslash -fallow-argument-mismatch -Mbackslash" >> $GITHUB_ENV
        
-       # export CC=clang
-       # export CXX=clang++
+        
 
     - name: Meson Build
       run: |
