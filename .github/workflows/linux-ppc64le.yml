@@ -64,7 +64,7 @@ jobs:
         echo CC=clang-20 >> $GITHUB_ENV
         echo "FCFLAGS=-fallow-argument-mismatch" >> $GITHUB_ENV
        # echo CXX=clang++-20 >> $GITHUB_ENV
-       # export CC=clang 
+       # export CC=clang #
         # export CXX=clang++
 
         
