@@ -1,10 +1,13 @@
 name: Native ppc64le Linux Test
 
 on:
-  pull_request:
+  push: 
     branches:
-      - main
-      - maintenance/**
+      - branch3 
+  # pull_request:
+  #   branches:
+  #     - main
+  #     - maintenance/**
     paths-ignore:
       - '**.pyi'
       - '**.md'
@@ -24,8 +27,10 @@ jobs:
     # This job runs only in the main NumPy repository.
     # It requires a native ppc64le GHA runner, which is not available on forks.
     # For more details, see: https://github.com/numpy/numpy/issues/29125
-    if: github.repository == 'numpy/numpy'
-    runs-on: ubuntu-24.04-ppc64le-p10
+    
+    #if: github.repository == 'numpy/numpy'
+    #runs-on: ubuntu-24.04-ppc64le-p10
+    runs-on: self-hosted
 
     strategy:
       fail-fast: false
@@ -56,8 +61,10 @@ jobs:
       if: matrix.config.name == 'clang'
       run: |
         sudo apt install -y clang
-        export CC=clang
-        export CXX=clang++
+        echo CC=clang >> $GITHUB_ENV
+        echo CXX=clang++ >> $GITHUB_ENV
+      #export CC=clang
+      #export CXX=clang++
 
     - name: Meson Build
       run: |
