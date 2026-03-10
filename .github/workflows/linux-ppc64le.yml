@@ -172,8 +172,8 @@ jobs:
     # It requires a native ppc64le and s390x GHA runners, which are not available on forks.
     # For more details, see: https://github.com/numpy/numpy/issues/29125
     #if: github.repository == 'numpy/numpy'
+    
     runs-on: ${{ matrix.config.runner }}
-
     strategy:
       fail-fast: false
       matrix:
