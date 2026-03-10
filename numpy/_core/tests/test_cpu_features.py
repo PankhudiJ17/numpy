@@ -390,7 +390,8 @@ class Test_POWER_Features(AbstractTest):
     features_map = {"VSX2": "ARCH_2_07", "VSX3": "ARCH_3_00", "VSX4": "ARCH_3_1"}
 
     def load_flags(self):
-        self.load_flags_auxv()
+      #  self.load_flags_auxv()
+        self.load_flags_cpuinfo("features")
 
 
 is_zarch = re.match(r"^(s390x)", machine, re.IGNORECASE)
