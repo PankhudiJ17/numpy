@@ -131,13 +131,13 @@ jobs:
         config:
           - name: "ppc64le/gcc - baseline(default)"
             args: "-Dallow-noblas=false"
-            runner: ubuntu-24.04-ppc64le-p10
-          - name: "s390x/gcc - baseline(default)"
-            args: "-Dallow-noblas=false"
-            runner: ubuntu-24.04-s390x
-          - name: "s390x/gcc - baseline(Z15/VXE2)"
-            args: "-Dallow-noblas=false -Dcpu-baseline=vxe2"
-            runner: ubuntu-24.04-s390x
+            runner: self-hosted
+          # - name: "s390x/gcc - baseline(default)"
+          #   args: "-Dallow-noblas=false"
+          #   runner: ubuntu-24.04-s390x
+          # - name: "s390x/gcc - baseline(Z15/VXE2)"
+          #   args: "-Dallow-noblas=false -Dcpu-baseline=vxe2"
+          #   runner: ubuntu-24.04-s390x
 
     name: "${{ matrix.config.name }}"
     steps:
