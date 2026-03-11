@@ -73,6 +73,7 @@ jobs:
       run: |
         spin build -- ${{ matrix.config.args }}
 
+
     - name: Meson Log
       if: always()
       run: cat build/meson-logs/meson-log.txt
