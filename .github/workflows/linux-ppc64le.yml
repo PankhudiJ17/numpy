@@ -159,7 +159,7 @@ jobs:
     - name: Run Tests
       run: |
         spin test -- --timeout=60 --durations=10
-        
+
   docker_ibm:
     # These jobs runs only in the main NumPy repository.
     # It requires a native ppc64le and s390x GHA runners, which are not available on forks.
@@ -206,6 +206,7 @@ jobs:
         echo CXX=clang++ >> $GITHUB_ENV
         echo "CFLAGS=-fno-strict-aliasing" >> $GITHUB_ENV
         echo "CXXFLAGS=-fno-strict-aliasing" >> $GITHUB_ENV
+
 
     - name: Meson Build
       run: |
