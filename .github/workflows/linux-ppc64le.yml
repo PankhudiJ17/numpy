@@ -60,12 +60,13 @@ jobs:
     - name: Install clang
       if: matrix.config.name == 'clang'
       run: |
-        sudo apt install -y clang
-        echo CC=clang >> $GITHUB_ENV
-        echo CXX=clang++ >> $GITHUB_ENV
+        sudo apt install -y clang-20  
+        echo CC=clang-20 >> $GITHUB_ENV
+        echo CXX=clang++-20 >> $GITHUB_ENV
         echo FC=gfortran >> $GITHUB_ENV
         echo "CFLAGS=-fno-strict-aliasing" >> $GITHUB_ENV
         echo "CXXFLAGS=-fno-strict-aliasing" >> $GITHUB_ENV
+      #(use clang-20)   
       #export CC=clang
       #export CXX=clang++
 
