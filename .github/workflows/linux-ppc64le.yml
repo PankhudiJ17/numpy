@@ -179,7 +179,6 @@ jobs:
         submodules: recursive
         fetch-tags: true
 
-
     - name: Install dependencies
       run: |
         docker run --name the_container --interactive \
